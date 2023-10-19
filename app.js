@@ -13,12 +13,10 @@ app.use( bodyParser.urlencoded({extended: false})); // middleware for body
 app.use( express.static( path.join(__dirname, 'public')));
 app.use( shopRoutes);
 
-// app.use( ( req, res, next ) => {
 app.get('*', function(req, res){
-    // res.status(404).send("<h2> Request not found </h2>")
-    //;
-    res.render( 'notFound', {title:"Page Not Found",
-        subTitle: "Try again",
+    res.render( 'home',
+        {title:"Welcome to Ted's Technology",
+        subTitle: "Click Button to see our inventory",
        });
 })
 
