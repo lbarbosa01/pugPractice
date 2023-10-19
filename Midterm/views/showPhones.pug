@@ -1,0 +1,20 @@
+include layouts/layoutBS
+
+.body.offset-1.p-4.m-5.content
+    h1 #{pageTitle}
+    table.table.table-striped
+        thead
+            tr
+                th(scope='col') Manufacturer
+                th(scope='col') Item
+                th(scope='col') Price
+        tbody
+            each i in inventory
+                - if (i.id != 0)
+                    tr
+                        td= i.manufact
+                        td= i.item
+                        td= i.price
+                        td
+                            form( method='get' action='showDetails/' + i.id )
+                                button( type='submit' class='btn btn-primary') Item Details

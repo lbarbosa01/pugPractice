@@ -1,0 +1,7 @@
+include layouts/layoutBS
+
+.body.container-fluid.content.offset-1
+    h1 #{title}
+    p #{subTitle}
+    form(action='/showPhones')
+        button.btn.bg-primary(type='submit' style="color : white") Shop For Phones

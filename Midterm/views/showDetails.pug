@@ -1,0 +1,28 @@
+include layouts/layoutBS
+
+.body.container-fluid.content
+    h2 #{pageTitle}
+    - if (sale != 0)
+        h2(style="background-color: yellow") This item is #{sale}% off!
+    table.table.table-striped
+        thead
+            tr
+                th(scope='col') Manufacturer
+                th(scope='col') Item
+                th(scope='col') Price
+                th(scope='col') Available
+                th(scope='col') Description
+                th(scope='col') Colors
+        tbody
+            tr
+                td #{manufact}
+                td #{item}
+                td #{price}
+                td #{avail}
+                td #{descr}
+                td
+                    ul
+                        - for (const property in colors)
+                            li= colors[property]
+    form(action='/home')
+        button.btn.bg-primary(type='submit' style="color : white") Back Home
